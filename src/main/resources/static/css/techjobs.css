@@ -60,3 +60,12 @@ div.job-listing {
     width: 80%;
     background-color: #e4e4e4;
 }
+
+.job-label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.job-data {
+    font-style: italic;
+}
