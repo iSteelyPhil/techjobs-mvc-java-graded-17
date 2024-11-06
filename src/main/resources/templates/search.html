@@ -20,7 +20,7 @@
                         name="searchType"
                         th:id="${column.key}"
                         th:value="${column.key}"
-                        th:checked="${column.key == chooseSearchType}"/>
+                        th:checked="${column.key == selectedSearchType}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
 
@@ -28,7 +28,7 @@
 
         <p>
             <label for="searchTerm">Keyword:</label>
-            <input type="text" name="searchTerm" id="searchTerm" />
+            <input type="text" name="searchTerm" id="searchTerm" th:value="${searchTerm}" />
         </p>
 
         <input type="submit" value="Search" />
@@ -38,15 +38,10 @@
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
 
+    <table th:replace="~{fragments :: job-listing(job=${job})}" th:each="job : ${jobs}">
+    </table>
 
-    <div th:if="${jobs}">
-        <h2>Search Results:</h2>
-        <div th:each="job : ${jobs}">
-            <div th:replace="~{fragments :: job-listing(job=${job})}"></div>
-        </div>
+            <!--<div th:replace="~{fragments :: job-listing(job=${job})}"></div>-->
     </div>
-
-</div>
-
 </body>
 </html>

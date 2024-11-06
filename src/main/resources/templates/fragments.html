@@ -27,10 +27,10 @@
             </ul>
         </div>
     </div>
+
 </div>
 
-<div th:fragment="job-listing(job)">
-    <table class="job-listing">
+    <table th:fragment="job-listing(job)" class="job-listing" th:each="job : ${jobs}" >
         <tr>
             <th class="job-label">ID</th>
             <td class="job-data" th:text="${job.id}"></td>
@@ -56,8 +56,8 @@
             <td class="job-data" th:text="${job.coreCompetency}"></td>
         </tr>
     </table>
-    <br/>
-</div>
+
+
 
 </body>
 </html>
