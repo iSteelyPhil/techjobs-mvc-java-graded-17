@@ -20,7 +20,7 @@ public class ListController extends TechJobsController {
 
     static HashMap<String, Object> tableChoices = new HashMap<>();
 
-    static {
+    public ListController() {
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());

@@ -7,8 +7,8 @@ import java.util.HashMap;
 
 public abstract class TechJobsController {
 
-    protected static final HashMap<String, String> actionChoices = new HashMap<>();
-    protected static final HashMap<String, String> columnChoices = new HashMap<>();
+    static HashMap<String, String> actionChoices = new HashMap<>();
+    static HashMap<String, String> columnChoices = new HashMap<>();
 
 
     static {

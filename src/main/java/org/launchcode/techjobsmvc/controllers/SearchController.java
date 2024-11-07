@@ -20,28 +20,26 @@ public class SearchController extends TechJobsController {
 
     @GetMapping(value = "")
     public String search(Model model) {
+        model.addAttribute("selectedSearchType", "all");
         return "search";
     }
 
     // TODO #3 - Create a handler to process a search request and render the updated search view.
 
     @PostMapping(value = "results")
-    public String displaySearchResults(Model model,
-                                       @RequestParam String searchType,
-                                       @RequestParam String searchTerm) {
+    public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
+
         ArrayList<Job> jobs;
 
-        if (searchTerm.equals("all") || searchTerm.isEmpty()) {
+        if (searchTerm.equals("all")) {
             jobs = JobData.findAll();
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
         }
 
         model.addAttribute("jobs", jobs);
-        model.addAttribute("title", "Search Results");
+        model.addAttribute("title", "Jobs With All: " + searchTerm);
         model.addAttribute("selectedSearchType", searchType);
-        model.addAttribute("searchTerm", searchTerm);
-
 
         return "search";
     }

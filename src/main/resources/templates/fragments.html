@@ -30,7 +30,7 @@
 
 </div>
 
-    <table th:fragment="job-listing(job)" class="job-listing" th:each="job : ${jobs}" >
+    <table th:fragment="singleJobListing" class="job-listing" th:each="job : ${jobs}" >
         <tr>
             <th class="job-label">ID</th>
             <td class="job-data" th:text="${job.id}"></td>

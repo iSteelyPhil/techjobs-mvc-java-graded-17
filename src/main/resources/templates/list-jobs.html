@@ -13,7 +13,7 @@
   <!-- TODO #1 - Use a loop to display job results in a table. -->
 
 
-  <table th:replace="~{fragments :: job-listing(job=${job})}" th:each="job : ${jobs}">
+  <table th:replace="~{fragments :: singleJobListing(job=${job})}">
   </table>
 
 </div>
