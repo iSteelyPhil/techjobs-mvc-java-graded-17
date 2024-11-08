@@ -41,6 +41,10 @@ public class SearchController extends TechJobsController {
         model.addAttribute("title", "Jobs With All: " + searchTerm);
         model.addAttribute("selectedSearchType", searchType);
 
+        if (jobs.isEmpty()) {
+            model.addAttribute("title", "No jobs found for the Keyword: '" + searchTerm + "'. Please try a different keyword.");
+        }
+
         return "search";
     }
 
